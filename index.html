@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <H>Test</H>
+   <H>Test</H>
     <!-- include A-Frame -->
-    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
-    <!-- include ar.js for A-Frame -->
-    <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
-  </head>
+  <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+<!-- include ar.js for A-Frame -->
+  <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+  
+  <body>
 
-<body>
-    <a-scene vr-mode-ui = " enable;false;" 
-    embedded arjs="trackingMethod: best; debugUIEnabled: false;">
+      <a-scene embedded arjs>
+        
+      <!-- Create a new asset with id "tree" to hold our tree.gltf --> 
       <a-assets>
-        <a-asset-item id="plant" src="models/tree.gltf"></a-asset-item>
-        </a-assets>
-      <a-marker preset='hiro'>
-        <a-entity position="0 0 0"
-                  rotation= "0 0 0"
-                  scale="1 1 1"
-                  
-                  gltf-model="#plant">
-                
+      <a-asset-item id="tree" src="models/tree.gltf"></a-asset-item>
+      </a-assets>
+
+      <!-- position that tree and scale it, linked with the tree id-->
+      <a-entity position="0 0 0"  
+                rotation="0 0 0"
+                scale="0.10 0.10 0.10"
+                gltf-model="#tree" >
                 </a-entity>
-        <a-marker preset='hiro'>
-    <a-marker-camera preset='hiro'></a-marker-camera>
-    </a-scene>
+                
+      <!-- define a camera which will move according to the marker position --> 
+      <a-marker-camera preset='hiro'></a-marker-camera>
+
+      </a-scene>
   </body>
 </html>
-
 
