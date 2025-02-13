@@ -14,15 +14,15 @@
       vr-mode-ui="enabled: false"
     >
 
+  <a-marker preset='hiro'>
        <!-- Create a new asset with id "tree" to hold our tree.gltf --> 
       <a-assets>
       <a-asset-item id="tree" src="models/scene.gltf"></a-asset-item>
       </a-assets>
       <!-- position that tree and scale it, linked with the tree id-->
     <a-entity scale ="1 1 1"gltf-model="#tree"></a-entity>
-
-  <a-marker-camera preset='hiro'></a-marker-camera>
-
+</a-marker>
+<a-entity camera></a-entity>
     </a-scene>
   </body>
 </html>
